@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@200&family=Quicksand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+
+.Homepage {
+  margin: 0;
+  padding: 0;
+  background-color: #2e2c2c;
+  height: 200vh;
+  overflow: hidden;
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  &__header {
+    font-family: "Libre Franklin", sans-serif;
+    color: white;
+    font-size: 6rem;
+    width: 50%;
+  }
+  &__image {
+    max-height: 700px;
+    max-width: 550px;
+    border-radius: 50px;
+  }
+  &__transition {
+    font-family: "Indie Flower", cursive;
+    color: white;
+    font-size: 6rem;
+  }
+  &__bottomWrap {
+    height: 100vh;
+    background-color: white;
+  }
+}
