@@ -5,18 +5,13 @@ import Me from "../../assets/images/Me.jpg";
 
 const texts = [
   "James",
-  "'TJ'",
-  "22",
+  "TJ",
+  "22 years old",
   "A Software Developer",
-  "Filipino!",
+  "Filipino",
   "A Musician",
-  "An Artist",
-  "Spiritual",
   "A loud laugher",
-  "Addicted to smiling",
-  "Wondering why...",
-  "you aren't...",
-  "scrolling down...",
+  "A smile addict :3",
 ];
 
 export default function Homepage() {
@@ -36,10 +31,16 @@ export default function Homepage() {
           <TextTransition
             className="Homepage__transition"
             text={texts[index % texts.length]}
-            springConfig={presets.gentle}
+            springConfig={presets.wobbly}
+            style = {{color: "purple"}}
+            direction = "down"
+            inline
           />
         </div>
-        <img src={Me} className="Homepage__image" />
+        <div className="Homepage__picture">
+          <h1 className="Homepage__picText">This is me!</h1>
+          <img src={Me} className="Homepage__image" />
+        </div>
       </div>
       <div className="Homepage__bottomWrap">
         <p>Hello</p>

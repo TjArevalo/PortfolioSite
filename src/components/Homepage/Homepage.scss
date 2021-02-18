@@ -12,22 +12,36 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
+    width: 90%;
+    padding:0 10%
   }
   &__header {
+    display: flex;
+    flex-direction: column;
     font-family: "Libre Franklin", sans-serif;
     color: white;
-    font-size: 6rem;
-    width: 50%;
-  }
-  &__image {
-    max-height: 700px;
-    max-width: 550px;
-    border-radius: 50px;
+    font-size: 5vw;
+    width: 50vw;
   }
   &__transition {
+    font-family: "Libre Franklin", cursive;
+    color: white;
+    font-size: 4vw;
+  }
+  &__picture {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50vw;
+  }
+  &__picText{
     font-family: "Indie Flower", cursive;
     color: white;
-    font-size: 6rem;
+  }
+  &__image {
+    width: 50%;
+    height: 100%;
+    border-radius: 50px;
   }
   &__bottomWrap {
     height: 100vh;
