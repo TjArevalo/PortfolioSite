@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Homepage.scss";
 import TextTransition, { presets } from "react-text-transition";
-import Me from "../../assets/images/Me.jpg";
+import { useTransition, animated, config } from "react-spring";
+import img0 from "../../assets/images/Me.jpg";
+import img1 from "../../assets/images/img1.jpeg";
+import img2 from "../../assets/images/img2.jpeg";
+import img3 from "../../assets/images/img3.jpg";
+import img4 from "../../assets/images/img4.jpg";
+import img5 from "../../assets/images/img5.jpg";
 
 const texts = [
   "James",
@@ -9,20 +15,65 @@ const texts = [
   "22 years old",
   "A Software Developer",
   "Filipino",
+  "Soulace",
   "A Musician",
   "A loud laugher",
   "A smile addict :3",
 ];
 
-export default function Homepage() {
-  const [index, setIndex] = React.useState(0);
+const slides = [
+  {
+    id: 0,
+    img: img0,
+  },
+  {
+    id: 1,
+    img: img1,
+  },
+  {
+    id: 2,
+    img: img2,
+  },
+  {
+    id: 3,
+    img: img3,
+  },
+  {
+    id: 4,
+    img: img4,
+  },
+  {
+    id: 5,
+    img: img5,
+  },
+];
 
-  React.useEffect(() => {
-    const intervalId = setInterval(
-      () => setIndex((index) => index + 1),
-      5000 // every 3 seconds
-    );
-  }, []);
+export default function Homepage() {
+  const [textIndex, setText] = useState(0);
+  const [index, set] = useState(0);
+
+  useEffect(
+    () =>
+      void setInterval(
+        () => setText((textState) => (textState + 1) % texts.length),
+        5000
+      ),
+    []
+  );
+
+  useEffect(
+    () =>
+      void setInterval(() => set((state) => (state + 1) % slides.length), 5000),
+    []
+  );
+
+  const transitions = useTransition(slides[index], (item) => item.id, {
+    from: { opacity: 0, transform: "scale(1.1)" },
+    enter: { opacity: 1, transform: "scale(1)" },
+    leave: { opacity: 0, transform: "scale(0.9)" },
+    config: config.molasses,
+  });
+
   return (
     <div className="Homepage">
       <div className="Homepage__wrapper">
@@ -30,18 +81,30 @@ export default function Homepage() {
           Kamusta! I'm...
           <TextTransition
             className="Homepage__transition"
-            text={texts[index % texts.length]}
+            text={texts[textIndex % texts.length]}
             springConfig={presets.wobbly}
-            style = {{color: "purple"}}
-            direction = "down"
+            style={{ color: "purple" }}
+            direction="down"
             inline
           />
         </div>
         <div className="Homepage__picture">
           <h1 className="Homepage__picText">This is me!</h1>
-          <img src={Me} className="Homepage__image" />
+          <div className="Homepage__image">
+            {transitions.map(({ item, props, key }) => {
+              return (
+                <animated.img
+                  key={key}
+                  class="Homepage__imageTransition"
+                  src={item.img}
+                  style={{ ...props }}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
+
       <div className="Homepage__bottomWrap">
         <p>Hello</p>
       </div>
