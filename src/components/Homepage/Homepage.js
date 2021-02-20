@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useHistory } from "react";
 import "./Homepage.scss";
 import TextTransition, { presets } from "react-text-transition";
 import { useTransition, animated, config } from "react-spring";
@@ -106,7 +106,16 @@ export default function Homepage() {
       </div>
 
       <div className="Homepage__bottomWrap">
-        <p>Hello</p>
+        <div className="Homepage__codingWrap">
+          <div className="Homepage__coding">
+            <h2 className="Homepage__linkText">CODING</h2>
+          </div>
+        </div>
+        <div className="Homepage__soulaceWrap">
+          <div className="Homepage__soulace">
+            <h2 className="Homepage__linkText--white">SOULACE</h2>
+          </div>
+        </div>
       </div>
     </div>
   );

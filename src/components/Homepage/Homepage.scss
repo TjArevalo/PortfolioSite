@@ -1,6 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@200&family=Quicksand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 
+@keyframes dragLeft {
+  0% {
+    clip-path: polygon(100% 1, 100% 100%, 0% 100%, 0% 0%);
+  }
+  100% {
+    clip-path: polygon(100% 0, 100% 100%, 0% 100%, 15% 0%);
+    opacity: 0.7;
+  }
+}
+
+@keyframes dragRight {
+  0% {
+    clip-path: polygon(100% 1, 100% 100%, 0% 100%, 100% 0%);
+  }
+  100% {
+    clip-path: polygon(-100% 0, -100% 100%, 100% 100%, 85% 0%);
+    opacity: 0.7;
+  }
+}
+
 .Homepage {
   margin: 0;
   padding: 0;
@@ -55,5 +75,67 @@
   &__bottomWrap {
     height: 100vh;
     background-color: white;
+  }
+  &__codingWrap {
+    height: 50vh;
+    width: 100vw;
+    background-color: white;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  &__coding {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin-left: 0;
+    margin-right: auto;
+    background-color: aqua;
+    clip-path: polygon(-100% 0, -100% 100%, 100% 100%, 100% 0%);
+    transition: clip-path 1s forwards;
+    background-image: url(../../assets/images/coding.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    &:hover {
+      animation: dragRight 1s 1 normal forwards;
+    }
+  }
+  &__soulaceWrap {
+    height: 50vh;
+    width: 100vw;
+    background-color: #454545;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  &__soulace {
+    display: flex;
+    flex-flow: row-reverse;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: 0;
+    background-color: purple;
+    clip-path: polygon(100% 0, 100% 100%, 0% 100%, 0% 0%);
+    background-image: url(../../assets/images/studio.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    &:hover {
+      animation: dragLeft 1s 1 normal forwards;
+    }
+  }
+  &__linkText {
+    font-family: "Libre Franklin";
+    font-size: 4rem;
+    color: purple;
+    margin: 0% 10vw;
+    &--white {
+      font-family: "Libre Franklin";
+      font-size: 4rem;
+      color: white;
+      margin: 0% 10vw;
+    }
   }
 }
