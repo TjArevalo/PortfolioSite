@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useHistory } from "react";
+import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import "./Homepage.scss";
 import TextTransition, { presets } from "react-text-transition";
 import { useTransition, animated, config } from "react-spring";
@@ -51,6 +52,13 @@ const slides = [
 export default function Homepage() {
   const [textIndex, setText] = useState(0);
   const [index, set] = useState(0);
+  const history = useHistory();
+  function codingRedirect() {
+    history.push("/portfolio");
+  }
+  function soulaceRedirect() {
+    // history.push("/soulace");
+  }
 
   useEffect(
     () =>
@@ -106,14 +114,15 @@ export default function Homepage() {
       </div>
 
       <div className="Homepage__bottomWrap">
-        <div className="Homepage__codingWrap">
+        <div className="Homepage__codingWrap" onClick={codingRedirect}>
           <div className="Homepage__coding">
             <h2 className="Homepage__linkText">CODING</h2>
           </div>
         </div>
-        <div className="Homepage__soulaceWrap">
+        <div className="Homepage__soulaceWrap" onClick={soulaceRedirect}>
           <div className="Homepage__soulace">
             <h2 className="Homepage__linkText--white">SOULACE</h2>
+            <p className="Homepage__linkText--white">(Coming soon!)</p>
           </div>
         </div>
       </div>

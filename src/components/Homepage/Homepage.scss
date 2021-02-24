@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@200&family=Quicksand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 
 @keyframes dragLeft {
@@ -71,6 +70,8 @@
     width: 100%;
     height: 100%;
     border-radius: 50px;
+    border: 2px solid white;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.8);
   }
   &__bottomWrap {
     height: 100vh;
@@ -90,7 +91,6 @@
     width: 100%;
     margin-left: 0;
     margin-right: auto;
-    background-color: aqua;
     clip-path: polygon(-100% 0, -100% 100%, 100% 100%, 100% 0%);
     transition: clip-path 1s forwards;
     background-image: url(../../assets/images/coding.jpeg);
@@ -116,7 +116,6 @@
     width: 100%;
     margin-left: auto;
     margin-right: 0;
-    background-color: purple;
     clip-path: polygon(100% 0, 100% 100%, 0% 100%, 0% 0%);
     background-image: url(../../assets/images/studio.jpeg);
     background-position: center;
