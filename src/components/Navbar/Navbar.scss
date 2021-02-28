@@ -30,23 +30,35 @@
     }
   }
   &__buttonBox {
+    display: flex;
     width: 25%;
     height: 100%;
   }
   &__portfolio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 1.2rem;
     width: 50%;
     height: 100%;
     color: white;
     background-color: #75106a;
     border: none;
+    cursor: pointer;
+    text-decoration: none;
   }
   &__email {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
     font-size: 1.2rem;
     width: 50%;
     height: 100%;
     color: #75106a;
     background-color: white;
     border: none;
+    cursor: pointer;
+    text-decoration: none;
   }
 }

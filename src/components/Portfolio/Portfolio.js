@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -127,25 +127,20 @@ export default function Portfolio() {
     },
   ];
 
-  const [skillCards, setSkillCards] = useState(cards);
-
-  function handleOnDragEnd(result) {
-    if (!result.destination) return;
-    const items = Array.from(skillCards);
-    const [reorderedItem] = items.splice(result.source.index, 1);
-    items.splice(result.destination.index, 0, reorderedItem);
-
-    setSkillCards(items);
-  }
+  const openInNewTab = (url) => {
+    const newWindow = window.open(url, "_blank", "noopener,noreferrer");
+    if (newWindow) newWindow.opener = null;
+  };
 
   return (
     <div className="Portfolio">
       <div className="Portfolio__dragBox">
         <h1 className="Portfolio__header">My Skillset</h1>
         <div className="Portfolio__cardList">
-          {skillCards.map(({ title, skills, image }) => {
+          {cards.map(({ title, skills, image }, index) => {
             return (
               <div
+                key={index}
                 className="Portfolio__card"
                 style={{
                   backgroundImage: `url(${image})`,
@@ -155,8 +150,12 @@ export default function Portfolio() {
               >
                 <h2 className="Portfolio__cardHeader">{title}</h2>
                 <ul className="Portfolio__skillBox">
-                  {skills.map((skill) => {
-                    return <li className="Portfolio__skill">{skill.skill}</li>;
+                  {skills.map((skill, index) => {
+                    return (
+                      <li key={index} className="Portfolio__skill">
+                        {skill.skill}
+                      </li>
+                    );
                   })}
                 </ul>
               </div>
@@ -175,8 +174,52 @@ export default function Portfolio() {
               border: "2px solid #fff",
             }}
             contentArrowStyle={{ borderRight: "7px solid #fff" }}
+            date="Feb 2021"
+            iconStyle={{
+              background: "#4F4049",
+              color: "#fff",
+              cursor: "pointer",
+            }}
+            icon={<HomeIcon />}
+            iconOnClick={() =>
+              openInNewTab("https://github.com/TjArevalo/PortfolioSite")
+            }
+          >
+            <h3 className="vertical-timeline-element-title">
+              Portfolio Site Created
+            </h3>
+            <h4 className="vertical-timeline-element-subtitle">
+              Vancouver, BC
+            </h4>
+            <p>
+              <a
+                href="https://github.com/TjArevalo/PortfolioSite"
+                className="Portfolio__projects--link"
+              >
+                https://github.com/TjArevalo/PortfolioSite
+              </a>
+            </p>
+            <p>
+              React | SASS | React Router | React Spring | React Vertical
+              Timeline
+            </p>
+            <p className="Portfolio__important">
+              (Mouse over the icons to check for a corresponding github link!)
+            </p>
+          </VerticalTimelineElement>
+          <VerticalTimelineElement
+            className="vertical-timeline-element--work"
+            contentStyle={{
+              background: "#75106A",
+              color: "#fff",
+              border: "2px solid #fff",
+            }}
+            contentArrowStyle={{ borderRight: "7px solid #fff" }}
             date="Feb 2021 - Present"
-            iconStyle={{ background: "#4F4049", color: "#fff" }}
+            iconStyle={{
+              background: "#4F4049",
+              color: "#fff",
+            }}
             icon={<WifiIcon />}
           >
             <h3 className="vertical-timeline-element-title">
@@ -185,7 +228,15 @@ export default function Portfolio() {
             <h4 className="vertical-timeline-element-subtitle">
               Toronto, ON (Remote)
             </h4>
-            <p>Fullstack development of a social media app.</p>
+            <p>
+              <a
+                href="https://www.dashboardsocialapp.com/"
+                className="Portfolio__projects--link"
+              >
+                https://www.dashboardsocialapp.com/
+              </a>
+            </p>
+            <p>Currently developing a social media app.</p>
             <p>
               React | SASS | React Router | MongoDB | Express | Axios |
               AGILE-SCRUM{" "}
@@ -200,8 +251,13 @@ export default function Portfolio() {
             }}
             contentArrowStyle={{ borderRight: "7px solid #fff" }}
             date="December 2020"
-            iconStyle={{ background: "#4F4049", color: "#fff" }}
+            iconStyle={{
+              background: "#4F4049",
+              color: "#fff",
+              cursor: "pointer",
+            }}
             icon={<HomeIcon />}
+            iconOnClick={() => openInNewTab("https://www.amay-sweets.com")}
           >
             <h3 className="vertical-timeline-element-title">
               Amay Sweets - Co-developer
@@ -209,6 +265,14 @@ export default function Portfolio() {
             <h4 className="vertical-timeline-element-subtitle">
               Vancouver, BC (Contract)
             </h4>
+            <p>
+              <a
+                href="https://amay-sweets.com/"
+                className="Portfolio__projects--link"
+              >
+                https://amay-sweets.com/
+              </a>
+            </p>
             <p>Developed website for family-owned business in Vancouver</p>
             <p>React | Styled Components | React Reveal</p>
           </VerticalTimelineElement>
@@ -221,8 +285,15 @@ export default function Portfolio() {
             }}
             contentArrowStyle={{ borderRight: "7px solid #fff" }}
             date="Oct 2020 - Feb 2021"
-            iconStyle={{ background: "#4F4049", color: "#fff" }}
+            iconStyle={{
+              background: "#4F4049",
+              color: "#fff",
+              cursor: "pointer",
+            }}
             icon={<SchoolIcon />}
+            iconOnClick={() =>
+              openInNewTab("https://github.com/TjArevalo/Notes_to_NoOne")
+            }
           >
             <h3 className="vertical-timeline-element-title">
               BrainStation - Student
@@ -231,6 +302,15 @@ export default function Portfolio() {
               Toronto, ON (Remote)
             </h4>
             <p>Web Development Graduate</p>
+
+            <p>Capstone Project: Notes to No-One</p>
+            <a
+              href="https://github.com/TjArevalo/Notes_to_NoOne"
+              className="Portfolio__projects--link"
+            >
+              https://github.com/TjArevalo/Notes_to_NoOne
+            </a>
+
             <p>
               HTML/CSS | Javascript | React | SASS | Styled Components | React
               Springs | Express | Axios | MySQL | Jest | Google Firebase |
@@ -246,7 +326,10 @@ export default function Portfolio() {
             }}
             contentArrowStyle={{ borderRight: "7px solid #fff" }}
             date="July 2020"
-            iconStyle={{ background: "#4F4049", color: "#fff" }}
+            iconStyle={{
+              background: "#4F4049",
+              color: "#fff",
+            }}
             icon={<ChildFriendlyIcon />}
           >
             <h3 className="vertical-timeline-element-title">
@@ -255,6 +338,7 @@ export default function Portfolio() {
             <h4 className="vertical-timeline-element-subtitle">
               Vancouver, BC
             </h4>
+            <p>Transitioned from audio engineering to software engineering</p>
             <p>Javascript | React</p>
           </VerticalTimelineElement>
         </VerticalTimeline>

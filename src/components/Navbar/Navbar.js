@@ -13,8 +13,15 @@ export default function Navbar() {
         TJ Arevalo
       </h1>
       <div className="Navbar__buttonBox">
-        <button className="Navbar__portfolio">Resume</button>
-        <button className="Navbar__email">Contact Me!</button>
+        <a className="Navbar__portfolio" href="Resume.pdf" download>
+          Resume
+        </a>
+        <a
+          className="Navbar__email"
+          href="mailto:timothyjamesarevalo@gmail.com"
+        >
+          Contact Me!
+        </a>
       </div>
     </div>
   );

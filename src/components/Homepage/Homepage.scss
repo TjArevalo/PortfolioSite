@@ -23,7 +23,7 @@
 .Homepage {
   margin: 0;
   padding: 0;
-  height: 200vh;
+  height: 190vh;
   overflow: hidden;
   &__wrapper {
     display: flex;
@@ -70,16 +70,15 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    border-radius: 50px;
-    border: 2px solid white;
+    border: 1px solid white;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.8);
   }
   &__bottomWrap {
-    height: 110vh;
+    height: 100%;
     background-color: white;
   }
   &__codingWrap {
-    height: 55vh;
+    height: 50vh;
     width: 100vw;
     background-color: white;
     overflow: hidden;
@@ -103,7 +102,7 @@
     }
   }
   &__soulaceWrap {
-    height: 55vh;
+    height: 50vh;
     width: 100vw;
     background-color: #454545;
     overflow: hidden;
