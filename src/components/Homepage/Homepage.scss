@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+@import "../Partials/mixins";
 
 @keyframes dragLeft {
   0% {
@@ -25,6 +26,9 @@
   padding: 0;
   height: 190vh;
   overflow: hidden;
+  @include largeDesk {
+    height: 200vh;
+  }
   &__wrapper {
     display: flex;
     align-items: center;
@@ -36,6 +40,12 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    @include mobile {
+      flex-direction: column;
+    }
+    @include largeDesk {
+      height: 100vh;
+    }
   }
   &__header {
     display: flex;
@@ -44,11 +54,20 @@
     color: white;
     font-size: 5vw;
     width: 50vw;
+    @include mobile {
+      text-align: center;
+      align-items: center;
+      font-size: 8vw;
+      margin-bottom: 5vh;
+    }
   }
   &__transition {
     font-family: "Libre Franklin", cursive;
     color: white;
     font-size: 4vw;
+    @include mobile {
+      font-size: 8vw;
+    }
   }
   &__picture {
     display: flex;
@@ -59,12 +78,32 @@
   &__picText {
     font-family: "Indie Flower", cursive;
     color: white;
+    @include mobile {
+      font-size: 4vw;
+    }
+    @include largeDesk {
+      font-size: 2vw;
+    }
   }
   &__image {
     position: relative;
-    width: 280px;
-    height: 350px;
     border-radius: 50px;
+    @include mobile {
+      width: 130px;
+      height: 170px;
+    }
+    @include tablet {
+      width: 190px;
+      height: 250px;
+    }
+    @include desktop {
+      width: 280px;
+      height: 350px;
+    }
+    @include largeDesk {
+      width: 520px;
+      height: 660px;
+    }
   }
   &__imageTransition {
     position: absolute;
@@ -100,6 +139,10 @@
     &:hover {
       animation: dragRight 1s 1 normal forwards;
     }
+    @include mobile {
+      flex-direction: column;
+      justify-content: center;
+    }
   }
   &__soulaceWrap {
     height: 50vh;
@@ -124,17 +167,33 @@
     &:hover {
       animation: dragLeft 1s 1 normal forwards;
     }
+    @include mobile {
+      flex-direction: column;
+      justify-content: center;
+    }
   }
   &__linkText {
     font-family: "Libre Franklin";
     font-size: 4rem;
     color: purple;
     margin: 0% 10vw;
+    @include mobile {
+      font-size: 2rem;
+    }
+    @include tablet {
+      font-size: 2rem;
+    }
     &--white {
       font-family: "Libre Franklin";
       font-size: 4rem;
       color: white;
       margin: 0% 10vw;
+      @include mobile {
+        font-size: 2rem;
+      }
+      @include tablet {
+        font-size: 2rem;
+      }
     }
   }
 }

@@ -11,9 +11,8 @@ import img4 from "../../assets/images/img4.jpg";
 import img5 from "../../assets/images/img5.jpg";
 
 const texts = [
-  "James",
   "TJ",
-  "22 years old",
+  "James",
   "A Software Developer",
   "Filipino",
   "Soulace",

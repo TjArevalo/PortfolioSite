@@ -134,7 +134,7 @@ export default function Portfolio() {
 
   return (
     <div className="Portfolio">
-      <div className="Portfolio__dragBox">
+      <div className="Portfolio__cardBox">
         <h1 className="Portfolio__header">My Skillset</h1>
         <div className="Portfolio__cardList">
           {cards.map(({ title, skills, image }, index) => {
@@ -365,7 +365,7 @@ export default function Portfolio() {
               https://github.com/TjArevalo
             </a>
           </p>
-          <p>
+          <p className="Portfolio__contactLink">
             Email :{" "}
             <a
               className="Portfolio__link"
@@ -374,7 +374,7 @@ export default function Portfolio() {
               timothyjamesarevalo@gmail.com
             </a>
           </p>
-          <div className="Portfolio__resume">
+          <div className="Portfolio__email">
             <a
               className="Portfolio__emailLink"
               href="mailto:timothyjamesarevalo@gmail.com"

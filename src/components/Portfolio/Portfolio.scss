@@ -1,11 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap");
+@import "../Partials/mixins";
 
 .Portfolio {
   margin: 0;
   height: 100%;
   background-color: #454545;
-  &__dragBox {
+  overflow: hidden;
+  &__cardBox {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -15,6 +17,9 @@
     background-size: cover;
     box-shadow: inset 0 0 5em 1em #000;
     padding-bottom: 5vw;
+    @include mobile {
+      height: 100%;
+    }
   }
   &__header {
     font-family: "Cormorant Garamond", serif;
@@ -27,6 +32,11 @@
     flex-direction: row;
     height: 70vh;
     width: 100%;
+    @include mobile {
+      flex-direction: column;
+      height: 100%;
+      width: 100vw;
+    }
   }
   &__card {
     display: flex;
@@ -36,6 +46,11 @@
     width: 25%;
     margin: 0 4.1%;
     background-image: linear-gradient(#75106a, white);
+    @include mobile {
+      height: 80vh;
+      width: 90vw;
+      margin: 0 5vw;
+    }
   }
   &__cardHeader {
     color: #75106a;
@@ -75,6 +90,11 @@
     display: flex;
     height: 75vh;
     background-color: white;
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+    }
   }
   &__contactPhotoBox {
     display: flex;
@@ -84,10 +104,14 @@
   }
   &__contactPhoto {
     border-radius: 10px;
-    width: 50%;
+    width: 55%;
     height: 80%;
     max-width: 400px;
     max-height: 600px;
+    @include mobile {
+      width: 70%;
+      height: 100%;
+    }
   }
   &__contactInfo {
     display: flex;
@@ -95,20 +119,30 @@
     justify-content: center;
     align-items: center;
     width: 70vw;
+    @include mobile {
+      text-align: center;
+    }
   }
   &__contactHeader {
     font-size: 2rem;
     margin-bottom: 3%;
+    @include mobile {
+      font-size: 1.5rem;
+    }
   }
   &__contactLink {
     font-size: 1rem;
     margin-bottom: 2%;
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+    }
   }
   &__link {
     text-decoration: none;
     color: #75106a;
   }
-  &__resume {
+  &__email {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -118,6 +152,11 @@
     border: none;
     border-radius: 20px;
     margin-top: 3%;
+    @include mobile {
+      height: 40px;
+      width: 70%;
+      margin-bottom: 3%;
+    }
   }
   &__emailLink {
     text-align: center;

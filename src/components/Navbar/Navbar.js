@@ -7,6 +7,7 @@ export default function Navbar() {
   function home() {
     history.push("/");
   }
+
   return (
     <div className="Navbar">
       <h1 className="Navbar__title" onClick={home}>
