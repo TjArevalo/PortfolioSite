@@ -11,7 +11,7 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={Homepage}></Route>
         <Route path="/portfolio" component={Portfolio}></Route>
-        <Route path="/test" component={Test}></Route>
+        {/* <Route path="/test" component={Test}></Route> */}
       </Switch>
     </div>
   );
