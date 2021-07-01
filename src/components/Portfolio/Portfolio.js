@@ -63,7 +63,7 @@ export default function Portfolio() {
         },
         {
           id: 10,
-          skill: "AGILE-SCRUM",
+          skill: "AGILE",
         },
       ],
     },
@@ -123,6 +123,34 @@ export default function Portfolio() {
           id: 21,
           skill: "React Draggable",
         },
+        {
+          id: 22,
+          skill: "React-Native",
+        },
+        {
+          id: 23,
+          skill: "AWS",
+        },
+        {
+          id: 24,
+          skill: "PostgreSQL",
+        },
+        {
+          id: 25,
+          skill: "Python",
+        },
+        {
+          id: 26,
+          skill: "DeepFace",
+        },
+        {
+          id: 27,
+          skill: "OpenCV",
+        },
+        {
+          id: 28,
+          skill: "Tensorflow",
+        },
       ],
     },
   ];
@@ -174,6 +202,46 @@ export default function Portfolio() {
               border: "2px solid #fff",
             }}
             contentArrowStyle={{ borderRight: "7px solid #fff" }}
+            date="April 2021 - June 2021"
+            iconStyle={{
+              background: "#4F4049",
+              color: "#fff",
+              cursor: "pointer",
+            }}
+            icon={<WifiIcon />}
+            iconOnClick={() =>
+              openInNewTab("https://github.com/TjArevalo/PortfolioSite")
+            }
+          >
+            <h3 className="vertical-timeline-element-title">
+              Internship @ Chiefly
+            </h3>
+            <h4 className="vertical-timeline-element-subtitle">
+              Vancouver, BC
+            </h4>
+            <p>
+              <a
+                href="https://www.bechiefly.com/chiefly-home"
+                className="Portfolio__projects--link"
+              >
+                https://www.bechiefly.com/chiefly-home
+              </a>
+            </p>
+            <p>
+              Created an emotion detection model using OpenCV and Deepface, as
+              well as experimented with TensorFlow's object detection
+              capabilities
+            </p>
+            <p>Python | Tensorflow | OpenCV | DeepFace</p>
+          </VerticalTimelineElement>
+          <VerticalTimelineElement
+            className="vertical-timeline-element--work"
+            contentStyle={{
+              background: "#75106A",
+              color: "#fff",
+              border: "2px solid #fff",
+            }}
+            contentArrowStyle={{ borderRight: "7px solid #fff" }}
             date="Feb 2021"
             iconStyle={{
               background: "#4F4049",
@@ -203,9 +271,6 @@ export default function Portfolio() {
               React | SASS | React Router | React Spring | React Vertical
               Timeline
             </p>
-            <p className="Portfolio__important">
-              (Mouse over the icons to check for a corresponding github link!)
-            </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
@@ -215,7 +280,7 @@ export default function Portfolio() {
               border: "2px solid #fff",
             }}
             contentArrowStyle={{ borderRight: "7px solid #fff" }}
-            date="Feb 2021 - Present"
+            date="Feb 2021 - April 2021"
             iconStyle={{
               background: "#4F4049",
               color: "#fff",
@@ -236,7 +301,7 @@ export default function Portfolio() {
                 https://www.dashboardsocialapp.com/
               </a>
             </p>
-            <p>Currently developing a social media app.</p>
+            <p>Assisted in the creation of a new social media application.</p>
             <p>
               React | SASS | React Router | MongoDB | Express | Axios |
               AGILE-SCRUM{" "}
